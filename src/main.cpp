@@ -5,38 +5,34 @@ using namespace std;
 int main() {
     int choice;
     string topic;
-    int solved;
+    int problems;
 
-    do {
-        cout << "\n--- DSA Progress Tracker ---\n";
+    while (true) {
+        cout << "\n==== DSA Progress Tracker ====\n";
         cout << "1. Add Progress\n";
         cout << "2. View Progress\n";
         cout << "3. Exit\n";
         cout << "Enter choice: ";
         cin >> choice;
 
-        switch (choice) {
-            case 1:
-                cout << "Enter Topic: ";
-                cin >> topic;
-                cout << "Problems Solved: ";
-                cin >> solved;
-                addProgress(topic, solved);
-                break;
-
-            case 2:
-                viewProgress();
-                break;
-
-            case 3:
-                cout << "Exiting...\n";
-                break;
-
-            default:
-                cout << "Invalid choice\n";
+        if (choice == 1) {
+            cout << "Enter Topic Name: ";
+            cin >> topic;
+            cout << "Problems Solved: ";
+            cin >> problems;
+            addProgress(topic, problems);
         }
-    } while (choice != 3);
-
+        else if (choice == 2) {
+            viewProgress();
+        }
+        else if (choice == 3) {
+            break;
+        }
+        else {
+            cout << "Invalid choice!\n";
+        }
+    }
     return 0;
 }
+
 
