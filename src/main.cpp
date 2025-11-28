@@ -26,13 +26,20 @@ int main() {
             viewProgress();
         }
         else if (choice == 3) {
+            cout << "Exiting program...\n";
             break;
         }
         else {
             cout << "Invalid choice!\n";
         }
+
+        cout << "\nPress Enter to continue...";
+        cin.ignore();
+        cin.get();
     }
+
     return 0;
 }
+
 
 
